@@ -1,6 +1,7 @@
 # QBB2022 - Day 2 - Homework Excercises Submission
 
-1. 
+##1. 
+
     #!/usr/bin/env python3
 
     import sys #import sys package which allows us to read in the input from the terminal 
@@ -128,8 +129,8 @@
 
 
 
+##2. 
 
-2. 
 	from vcfParser import parse_vcf #import the parse_vcf function from previous python document
 
 	import sys
