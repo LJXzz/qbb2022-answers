@@ -1,4 +1,5 @@
 #1. 
+```
 #!/usr/bin/env python3
 
 import sys  #import sys package
@@ -68,7 +69,7 @@ def parse_bed(fname): #define a function to read the bed file
     if __name__ == "__main__":
         fname = sys.argv[1]
         bed = parse_bed(fname)
-
+```
 
 
 
