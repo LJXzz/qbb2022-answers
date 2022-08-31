@@ -151,10 +151,10 @@
 
 	incorrect=0 # define a variable to calculate records that do not have a corresponding ID in  dbSNP ID dictionary
 
-	# Replaces the ID in each record from random_snippet.vcf with the correct label, if it exists, from dbSNP dictionary(dbdic)
+	#Replaces the ID in each record from random_snippet.vcf with the correct label, if it exists, from dbSNP dictionary(dbdic)
 	for i in range(len(random)): 
 	    if random[i][1] in posdb: # judge if same record appears in two data by the positon
-	        random[i][2] = dbdic[pos] #if the recod exists in both file, replaces the ID with the ID in dbSNP
+	       random[i][2] = dbdic[pos] #if the recod exists in both file, replaces the ID with the ID in dbSNP
         
 	    else:
 	        incorrect=incorrect+1 # record how many position doesn't exist in both file, 
