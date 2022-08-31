@@ -1,9 +1,9 @@
-1. 
+#1. 
 #!/usr/bin/env python3
 
-import sys
+ import sys
 
-def parse_bed(fname):
+ def parse_bed(fname):
     try:
         fs = open(fname, 'r')
     except:
