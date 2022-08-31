@@ -75,6 +75,10 @@ def parse_bed(fname): #define a function to read the bed file
 
 
 
-2. 
+
+#2. 
+
+To find the median, we just need to import statistics module and then use the median function
+
 the number of malformed entries within the test data bed file: 3
 the median number of exons for genes within the test data bed file: 4
