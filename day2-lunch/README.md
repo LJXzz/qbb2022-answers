@@ -1,22 +1,22 @@
 #1. 
 #!/usr/bin/env python3
 
- import sys
+import sys  #import sys package
 
- def parse_bed(fname):
+def parse_bed(fname): #define a function to read the bed file
     try:
-        fs = open(fname, 'r')
+        fs = open(fname, 'r')  #if we can find the file, just open and read it
     except:
-        raise FileNotFoundError("That file doesn’t appear to exist")
+        raise FileNotFoundError("That file doesn’t appear to exist") # if we can't find the file, just give a error information
     bed = [] # define a list
     wrong=0 # define a variables to count the amount of incorrectly-formatted line
    
-    field_types = [str, int, int, str, float, str]
-    for i, line in enumerate(fs):
-        if line.startswith("#"):
+    field_types = [str, int, int, str, float, str]  #a list with the type function
+    for i, line in enumerate(fs):   #look through each line in the file
+        if line.startswith("#"):    # if the line begins with #, never worry about it
             continue
-        fields = line.rstrip().split()
-        fieldN = len(fields)
+        fields = line.rstrip().split()  #make every line a list and store it in fields
+        fieldN = len(fields)  #calculate how many lines
         
         if fieldN < 3: # formate less than 3 is prohibited
             print(f"Line {i} appears malformed", file=sys.stderr)
