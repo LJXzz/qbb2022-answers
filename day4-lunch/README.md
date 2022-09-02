@@ -56,12 +56,13 @@ USAGE
      python plot_vcf_ac.py file.vcf
 
  DESCRIPTION
-    1. Create .bed files for features of interest
-       - add feature you are intersted in subset_regions.sh
-	     - Run subset_regions.sh Bash script
-       - Use grep to get the information for data with specific feature you are intrested in
-    2. Subsetting .vcf for each feature
-	    - output .vcf file for each feature
-	  3. calculate bp coverage 
-    4. create the plot for each vcf file
-    5. create the histogram for each file
+1. Create .bed files for features of interest
+- add feature you are intersted in subset_regions.sh
+- Run subset_regions.sh Bash script
+- Use grep to get the information for data with specific feature you are intrested in
+
+2. Subsetting .vcf for each feature
+- output .vcf file for each feature
+3. calculate bp coverage 
+4. create the plot for each vcf file
+5. create the histogram for each file
