@@ -1,13 +1,14 @@
 ##exercise 1
-1.  
+
+###1.  
 Subsetting exons.chr21.bed.vcf: Covering 1107407 bp
 processed_pseudogene.chr21.bed.vcf: Covering 956640 bp
 Subsetting protein_coding.chr21.bed.vcf: Covering 13780687 bp
 
-2. 
+###2. 
 To campare two images, we can use ImageMagick, whichis exatly a tools to do image comarasion.
 
-3. 
+###3. 
 I found different types: unprocessed_pseudogene, transcribed_unprocessed_pseudogene, lncRNA, miRNA. It's not easy to find what is intersting just look through the data by eyes but I feel that the account of pseudogene is much more than I expect.
 
 
