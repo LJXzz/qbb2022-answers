@@ -47,7 +47,7 @@ I got five figure. The plot for protein soding shows the most similiar trend to 
 SYNOPSIS
      bxlab/cmdb-plot-vcfs -- The scripts in this file are trying to output the allele count density histogram for specific feature from your vcf file.
 
- USAGE 
+USAGE 
 
      add specific feature(genetpye) you want in subset_regions.sh line 12thon 
      
