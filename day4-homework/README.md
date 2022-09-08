@@ -1,5 +1,5 @@
 
-##A
+## A
 - The output with the required tosses and probs is as follows: (the first column is prob, the second is toss, and the third is the output from function "run_exerpiment()")
 	1.0 10 1.0
 	1.0 50 1.0
@@ -70,7 +70,7 @@
 - With [::-1], the output becomes: [1.   0.95 0.9  0.85 0.8  0.75 0.7  0.65 0.6  0.55], which means [::-1] is actually a way to reverse the array.
 
 
-##B
+## B
 The power matrix is 
  [1.   1.   1.   1.   1.   1.  ]
  [0.93 1.   1.   1.   1.   1.  ]
@@ -85,11 +85,11 @@ The power matrix is
  
  
  
-##C
+## C
 
 - As the probability or number of toss parameters, the power will continue to increase, which means that as the number of coin tosses in each experiment increases or the coin is more unfair, the results we see will be closer to the theoretical results, which means we reject more fales test.
 
-##D
+## D
 
 - This paper focuses on  “transmission distortion” (TD), a phenomenon that “selfish” alleles disproportionately transmitted to the next generation regardless of Mendel’s Law of Segregation.
 
