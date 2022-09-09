@@ -1,6 +1,6 @@
 # QBB2022 - Day 1 - Homework Exercises Submission
 
-##Excercise 1:
+## Excercise 1:
 
 error message: 
 Considering  A
@@ -21,7 +21,7 @@ awk: illegal field $(), name "nuc"
  source line number 1
 
 
-Then I tried to google, and google suggested that we have to get variable outside awk with -v
+Then I tried to google, and google suggested that we have to get variable outside awk with -v and we also have to removing the `$` from the `for $nuc in A C G T`
 output:
 Considering  A
  354 C
@@ -44,7 +44,7 @@ The output suggests that A and G has more possibilities to mutant to each other 
 
 
 
-##Exercise 2
+## Exercise 2
 
 Firstly, with the Core 15-state model, we have to define what kind of state is related to promoter. According to the paper of the state model, promoters can not be clearly and objectively defined, but  the active states (associated with expressed genes) consist of active transcription start site are mostly like to be the signature of promoter——TssA（state 1），TssAFlnk(state2),TssBiv(state 10), BivFlnk(state 11). 
 
@@ -67,7 +67,7 @@ Considering  C
 The mutation leads to more A-T pairs in promoter. I think this is related to the function of promoter since the active expression is related to the unwinding of DNA and A-T combinantion is less strong than C-G.
   
   
-#exercise 3
+## Exercise 3
 
 "awk '/^#/{next} {print $1,$2-1, $2}' $1 > variants.bed" This code means:
 1. skip the line with # at the beginning
@@ -90,14 +90,15 @@ Second error: Error: Sorted input specified, but the file variants.bed has the f
 chr21	5218156	5218157
 
 script: 
-awk '/^#/{next} {print $1,$2-1, $2}' $1 > variants.bed
-perl -p -i -e 's/ /\t/g' variants.bed
-sort -k1,1 -k2,2n ~/data/bed_files/genes.bed > genes.sorted.bed
-sort -k1,1 -k2,2n variants.bed > variants.sorted.bed
-bedtools closest -a variants.sorted.bed -b genes.sorted.bed
 
-bash exercise3.sh ~/data/vcf_files/random_snippet.vcf|cut -f7|wc-----10293  variants are returned
-bash exercise3.sh ~/data/vcf_files/random_snippet.vcf|cut -f7|sort|uniq -c|wc------200 unique genes
+        awk '/^#/{next} {print $1,$2-1, $2}' $1 > variants.bed
+        perl -p -i -e 's/ /\t/g' variants.bed
+        sort -k1,1 -k2,2n ~/data/bed_files/genes.bed > genes.sorted.bed
+        sort -k1,1 -k2,2n variants.bed > variants.sorted.bed
+        bedtools closest -a variants.sorted.bed -b genes.sorted.bed
+
+        bash exercise3.sh ~/data/vcf_files/random_snippet.vcf|cut -f7|wc-----10293  variants are returned
+        bash exercise3.sh ~/data/vcf_files/random_snippet.vcf|cut -f7|sort|uniq -c|wc------200 unique genes
 
 Therefor 51 variants on average are therefore connected to a gene with bedtools closest.
 
