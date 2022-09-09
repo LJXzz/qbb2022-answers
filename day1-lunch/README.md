@@ -75,7 +75,8 @@ c.
  1|1 : 181
  
  d.
- 15
+ Command: grep -w "AF=1" HG00100.vcf |wc
+ The ansewer is 15.
  
  e.
  We can just directly use the command: cut -d ";" -f 7 HG00100.vcf, which split those frequency data with ; and then go to line 7 which is "AFR="
