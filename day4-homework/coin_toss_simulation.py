@@ -20,8 +20,7 @@ def simulate_coin_toss(n_tosses, prob_heads = 0.5, seed=None):
     results_arr = numpy.random.choice([0,1], size=n_tosses, p = [1-prob_heads, prob_heads])
     return (results_arr)
     
-#print(numpy.sum(simulate_coin_toss(10)))
-#print(numpy.sum(simulate_coin_toss(10,seed=4)))
+
 
 #hypo test
 def perform_hypothesis_test(n_heads, n_tosses):
@@ -29,21 +28,20 @@ def perform_hypothesis_test(n_heads, n_tosses):
     pval = binom_result.pvalue #grabbing the pvalue attribute from the binom_result instance
     return(pval)
     
-#print(perform_hypothesis_test(2,5))
+
 
 def correct_pvalues(pvals): 
     correct_pvalues = multipletests(pvals, method='bonferroni')
     return(correct_pvalues[1])
     
 
-#print(correct_pvalues([0.005, 0.04, 0.03,0.003,0.000001]))
+
     
-#
 def interpret_pvalues(pvals):
     interpreted = numpy.array(pvals) < 0.05  #check evrey pvals in the array
     return(interpreted) # an arry of true and false
 
-#print(interpret_pvalues([0.06,0.5,0.05,0.03]))
+
 
 
 def compute_power(n_rejected_correctly, n_tests):
@@ -62,24 +60,19 @@ def run_experiment(prob_heads, n_toss, n_iters = 100, seed = 389, correct_the_pv
         pvals = correct_pvalues(pvals)
     pvals_translated_to_bools = interpret_pvalues(pvals)
     power = compute_power(numpy.sum(pvals_translated_to_bools), n_iters)
-    #power_arr = numpy.zeros((len(prob_heads), len(n_toss)))  
-    #for i, prob in enumerate(prob_heads):
-        #for j,toss in enumerate(n_toss):
-            #power_arr[i,j] = prob + toss  #用这样的方法储存array，没有实际意义
     return(power)
 
 probs = numpy.around(numpy.arange(0.55, 1.05, 0.05), decimals=2)[::-1]
 tosses = numpy.array([10, 50, 100, 250, 500, 1000])
 
+#run experiment for each probs and tosses
 power_arr = numpy.zeros((len(probs), len(tosses)))
 for i in range(len(probs)):
     for j in range(len(tosses)):
         power=run_experiment(probs[i],tosses[j], correct_the_pvalues = True )
-        #for a, prob in enumerate(probs):
-            #for b,toss in enumerate(tosses):
         power_arr[i,j] =power  
-#print(power_arr)
 
+        
 fig, ax = plt.subplots()
 xticklabels = tosses
 yticklabels = probs
@@ -87,11 +80,6 @@ ax = sns.heatmap(power_arr,vmin=0, vmax=1, xticklabels = xticklabels, yticklabel
 plt.xlabel('num of tosses')
 plt.ylabel('possibilities')
 plt.show()
-
-#power1 = run_experiment(0.6, 500)
-#power2 = run_experiment(0.95, 10, correct_the_pvalues = True)
-#print(power1)
-#print(power2)
 
 
 
