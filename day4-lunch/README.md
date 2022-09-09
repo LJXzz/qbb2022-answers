@@ -7,6 +7,10 @@ Subsetting protein_coding.chr21.bed.vcf: Covering 13780687 bp
 
 ### 2. 
 To campare two images, we can use ImageMagick, whichis exatly a tools to do image comarasion.
+magick compare -compose pic1.png pic2.png difference.png 
+magick difference.png -transparent "#CCCCCC" alpha.png  
+
+The two command help us to get a png with the difference in red.
 
 ### 3. 
 I found different types: unprocessed_pseudogene, transcribed_unprocessed_pseudogene, lncRNA, miRNA. It's not easy to find what is intersting just look through the data by eyes but I feel that the account of pseudogene is much more than I expect.
