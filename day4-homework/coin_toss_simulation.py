@@ -50,7 +50,7 @@ def compute_power(n_rejected_correctly, n_tests):
 
 
 def run_experiment(prob_heads, n_toss, n_iters = 100, seed = 389, correct_the_pvalues = False):
-    numpy.random.seed(seed)  #n-iters是做了多少次实验，n_toss是每一次扔多少次
+    numpy.random.seed(seed)  
     pvals=[]
     for i in range(n_iters):
         results_arr = simulate_coin_toss(n_toss, prob_heads = prob_heads)
@@ -72,11 +72,12 @@ for i in range(len(probs)):
         power=run_experiment(probs[i],tosses[j], correct_the_pvalues = True )
         power_arr[i,j] =power  
 
-        
+
+# build the heat map
 fig, ax = plt.subplots()
 xticklabels = tosses
 yticklabels = probs
-ax = sns.heatmap(power_arr,vmin=0, vmax=1, xticklabels = xticklabels, yticklabels=yticklabels)
+ax = sns.heatmap(power_arr,vmin=0, vmax=1, xticklabels = xticklabels, yticklabels=yticklabels, cmap="mako")
 plt.xlabel('num of tosses')
 plt.ylabel('possibilities')
 plt.show()
