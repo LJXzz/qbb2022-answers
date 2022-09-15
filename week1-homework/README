@@ -1,0 +1,118 @@
+# Week1 homework
+
+## Question 1. coverage simulator
+
+### 1.1
+To sequence a 1Mbp genome to 5x coverage with 100bp reads, we need
+
+1M * 5 / 100 = 50000
+
+If 15x coverage
+
+1M * 15 / 100 = 150000
+
+
+### 1.3
+According to the stimulation, there are 7449 locations(frequency: 0.007499) with 0 read coverage.
+According to the Poisson expectations, the frequence of 0 read coverage is 0.006737946999085467.
+
+We can use chi square test to see if the stimulation results fit the expectations(the command in python is stats.chisquare), and it fits
+
+
+### 1.4
+According to the stimulation, there are 16 locations(frequency: 0.000016) with 0 read coverage.
+According to the Poisson expectations, the frequence of 0 read coverage is 3.059023205018258e-07.
+
+I also use chi seuqare test to verify and the stimulation results fit the expectations.
+
+##Question 2. De novo assembly
+
+### 2.1
+
+4 contigs were produced.
+
+### 2.2
+
+105830 + 47860 + 41351 + 39426 = 234467
+
+The total length of the contigs is 234467 
+
+### 2.3
+
+The largest contig is 105830.
+
+### 2.4 
+
+N50 is defined as the sequence length of the shortest contig at 50% of the total genome length
+
+The N50 for our assembly is 47860.
+
+##Question 3. Whole Genome Alignment
+
+
+## 3.1
+
+According to the results, the average identify of my assembly compared to the reference is nearly 100%
+
+
+### 3.2
+
+[S1]     [E1]  |     [S2]     [E2]  |  [LEN 1]  [LEN 2]  |  [% IDY]  | [TAGS]
+=====================================================================================
+  127965   233794  |        1   105830  |   105830   105830  |    99.99  | Halomonas	NODE_1_length_105830_cov_20.649193
+   40651    88510  |        1    47860  |    47860    47860  |   100.00  | Halomonas	NODE_2_length_47860_cov_20.367392
+       3    26789  |        1    26787  |    26787    26787  |   100.00  | Halomonas	NODE_3_length_41351_cov_20.528098
+   26790    40641  |    27500    41351  |    13852    13852  |   100.00  | Halomonas	NODE_3_length_41351_cov_20.528098
+   88532   127957  |        1    39426  |    39426    39426  |   100.00  | Halomonas	NODE_4_length_39426_cov_20.336388
+   
+   
+   
+ according to the output, the length of the longest alignment is 105830
+ 
+ 
+### 3.3
+[Feature Estimates]
+Breakpoints                       10                    2
+Relocations                        0                    0
+Translocations                     3                    0
+Inversions                         0                    0
+
+Insertions                         5                    1
+InsertionSum                      51                  712
+InsertionAvg                   10.20               712.00
+
+TandemIns                          0                    0
+TandemInsSum                       0                    0
+TandemInsAvg                    0.00                 0.00
+
+Accroding to the out.report, there is 1 insertion and 10 deletions(insertions in R can be viewed as deletions from Q)
+
+
+## Question 4. Decoding the insertion
+
+### 4.1 
+According to the out.delta file, there seems to be a insertion at 26788-27499
+
+### 4.2 
+
+The insertion sequence's length is 712bp
+
+### 4.3
+
+The insertion sequence is 
+CGCCCATGCGTAG 
+GGGCTTCTTTAATTACTTGATTGACGCATGCCCCTCGTTCTACATGTCTAGCTTCGTAACTGCCCCGATTTATACAGGAG
+CATATGCGTTTCGTAGTGCCGGGAATGCATACCAAAGGGCTCACGGCGGGTACGCCACAATGGCTCAAGTCGAAAATGAA
+TCGAAGACAACAAGGAATACCGTACCCAATTACTCAAGGACCTCATACACCATCCCATGCTACTTATCTACAGACATACA
+CGCCAGCACCCAGCAACCAAAGCACACCGACGATAAGACTACAATCGCGATAAGCACAACTTACATTAGGAGGCCCGGCA
+AATCTTGACGGCGTTAAGTCCGACACGAATACCCCCCGACAAAAGCCTCGTATTCCGAGAGTACGAGAGTGCACAAAGCA
+CCAAGGCGGGGCTTCGGTACATCCACCAGTAGTCCCGTCGTGGCGGATTTTCGTCGCGGATGATCCGAGGATTTCCTGCC
+TTGCCGAACACCTTACGTCATTCGGGGATGTCATAAAGCCAAACTTAGGCAAGTAGAAGATGGAGCACGGTCTAAAGGAT
+TAAAGTCCTCGAATAACAAAGGACTGGAGTGCCTCAGGCATCTCTGCCGATCTGATTGCAAGAAAAAATGACAATATTAG
+TAAATTAGCCTATGAATAGCGGCTTTAAGTTAATGCCGAGGTCAATATTGACATC
+
+### 4.4
+
+The message is "Congratulations to the 2021 CMDB @ JHU class!  Keep on looking for little green aliens.." 
+
+
