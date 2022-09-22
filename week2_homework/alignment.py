@@ -27,10 +27,10 @@ for i in range(len(l)):
 # if we want to check the mismatch score for a certain mismatch pair, just:  dic_score[sequence1[i])+sequence2[i]]
 
 
-gap_penality = -300
+gap_penality = -300 #should change the number for protein alignment
 
 F_matrix = np.zeros((len(sequence1)+1, len(sequence2)+1)) # Initialize F-matrix
-T_matrix = np.zeros((len(sequence1)+1, len(sequence2)+1)) # Initialize traceback matrix but i think I don't need one
+T_matrix = np.zeros((len(sequence1)+1, len(sequence2)+1)) # Initialize traceback matrix but I think I don't need one
 
 for i in range(len(sequence1)+1):
     F_matrix[i,0] = i*gap_penality
@@ -71,21 +71,21 @@ while i > 0 and j > 0:
         align2 += sequence2[j-1]
         i -= 1
         j -= 1
-        #finalscore = finalscore + d
+       
         
     elif score == h + gap_penality:
         align2 += sequence2[j-1]
         align1 += '-'
         j -= 1
         gap_1 += 1
-        #finalscore = finalscore + h
+        
         
     elif score == v + gap_penality:
         align2 += '-'
         align1 += sequence1[i-1]
         i -= 1
         gap_2 +=1
-        #finalscore = finalscore + v
+        
 
 while i > 0:
     align1 += sequence1[i-1]
