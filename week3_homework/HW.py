@@ -50,10 +50,10 @@ for n,line in enumerate(vcf_read):
         effect_list=line[7]['ANN'].split(',')
         for i in effect_list:
             a=i.split("|")
-            if a[1] not in effect.keys():
-                effect[a[1]]=1
+            if a[2] not in effect.keys():
+                effect[a[2]]=1
             else:
-                effect[a[1]]+=1
+                effect[a[2]]+=1
     except:
         continue
 
@@ -89,6 +89,5 @@ plt.xticks(fontsize=8,rotation=-30)
 ax[1][1].set_ylabel("Counts")
 ax[1][1].set_xlabel("Predicted effects")
 ax[1][1].title.set_text("Summary of predicted effects")
-ax[1][1].set_yscale("log")
 
 fig.savefig("week3.png")
