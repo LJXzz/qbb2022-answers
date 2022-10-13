@@ -15,7 +15,7 @@
 ## 4.
     bedtools intersect -a overlaps.bed -b D2_Klf4_peaks.bed >SK_overlaps.bed
 
-There are totally 672 peaks in two files with 39 overlaps.
+There are 651 peaks for Sox2 and 60peaks for Klf4 and 39 overlaps for these two sample.
 Klf4 has 60 peaks in total so 39/60 = 65% of Klf4 peaks colocalized with Sox2.
 
 
@@ -42,10 +42,10 @@ Klf4 has 60 peaks in total so 39/60 = 65% of Klf4 peaks colocalized with Sox2.
      meme-chip --maxw 7 R1_Ex2.4.peak 
     meme-chip --maxw 7 R2_Ex2.4.peak
  
-I get two peak for R1 and one peak for R2.
+I get three motifs for sox2 and one motif for Klf4
  
-    R1:
-
+    Sox2:
+    
     MOTIF 1 CCCACCC-MEME-1
 
     letter-probability matrix: alength= 4 w= 7 nsites= 119 E= 3.4e-051
@@ -68,8 +68,7 @@ I get two peak for R1 and one peak for R2.
     0.000000	  1.000000	  0.000000	  0.000000	
     0.000000	  1.000000	  0.000000	  0.000000
  
-    R2: 
-    MOTIF 1 GGGTGKG-MEME-1
+    MOTIF 3 GGGTGKG-MEME-1
 
     letter-probability matrix: alength= 4 w= 7 nsites= 149 E= 2.4e-084
     0.000000	  0.000000	  1.000000	  0.000000	
@@ -79,11 +78,28 @@ I get two peak for R1 and one peak for R2.
     0.000000	  0.000000	  0.979866	  0.020134	
     0.000000	  0.000000	  0.664430	  0.335570	
     0.241611	  0.000000	  0.758389	  0.000000
+    
+    Klf4:
+    
+    MOTIF 1 GGGYGKG-MEME-1
+
+    letter-probability matrix: alength= 4 w= 7 nsites= 53 E= 9.5e-008
+      0.207547	  0.000000	  0.792453	  0.000000	
+      0.000000	  0.000000	  1.000000	  0.000000	
+      0.037736	  0.000000	  0.962264	  0.000000	
+      0.056604	  0.320755	  0.000000	  0.622642	
+      0.000000	  0.000000	  1.000000	  0.000000	
+      0.018868	  0.000000	  0.509434	  0.471698	
+      0.283019	  0.000000	  0.698113	  0.018868
+
    
  
 # Part 3
 
-Through tomtom .html results file: 
-For CCCACCC, we have 37 matches
-For CCCTSCC, we have 33 matches.
-For GGGTGKG, we have 38 matches
+    Through tomtom .html results file for Sox2:
+    For CCCACCC, we have 37 matches
+    For CCCTSCC, we have 33 matches.
+    For GGGTGKG, we have 38 matches
+
+    For motif GGGYGKG of Klf4, we have 33 matches.
+    
