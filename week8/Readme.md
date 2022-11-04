@@ -33,5 +33,5 @@ samtools index h2.bam > h2.bam.bai
 
 ## part 6:
 
-I don't think each region in H1 or H2 to correspond to the same parent of origin (i.e. the same haplotype) because when do the pervious step in whatshap, reads from different haplotype are combined.WhatsHap can phase multiple samples that are not related if provided with a multi-sample VCF file and WhatsHap switches to the combined read-based/pedigree phasing algorithm.
+I don't think each region in H1 or H2 to correspond to the same parent of origin (i.e. the same haplotype) because when phase the chromosome, reads from different haplotypes are combined by overlap and there must be some reads that might have no overlap so we don't know which haplottype it comes from. 
 
