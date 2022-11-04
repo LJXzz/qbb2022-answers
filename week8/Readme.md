@@ -26,3 +26,12 @@ samtools cat -o h1.bam chr11_h1.bam chr14_h1.bam chr15_h1.bam chr20_h1.bam
 samtools cat -o h2.bam chr11_h2.bam chr14_h2.bam chr15_h2.bam chr20_h2.bam
 samtools index h1.bam > h1.bam.bai
 samtools index h2.bam > h2.bam.bai 
+
+## part 5: 
+./igv.sh h1.bam
+./igv.sh h2.bam
+
+## part 6:
+
+I don't think each region in H1 or H2 to correspond to the same parent of origin (i.e. the same haplotype) because when do the pervious step in whatshap, reads from different haplotype are combined.WhatsHap can phase multiple samples that are not related if provided with a multi-sample VCF file and WhatsHap switches to the combined read-based/pedigree phasing algorithm.
+
