@@ -113,6 +113,7 @@ plt.show()
 
 
 #part3
+# I run this in a different script but I copy them this place
 
 import sys
 import math
@@ -135,8 +136,8 @@ for i in range(len(data)):
 				if data[i][1]> 54877:
 					F1 = data[i][0] - start_bin
 					F2 = data[i][1] - start_bin
-					matrix[F1,F2] = math.log(data[k][2],2)
-					matrix[F2,F1] = math.log(data[k][2],2)
+					matrix[F1,F2] = math.log(data[i][2],2)
+					matrix[F2,F1] = math.log(data[i][2],2)
 					if matrix[F2,F1] < miniscore:
 						miniscore = matrix[F2,F1]
 					else: 
@@ -149,7 +150,7 @@ postion = []
 for i in range(5, 70):
 	up = numpy.mean(matrix[(i - 5):i, i:(i + 5)])
 	down = numpy.mean(matrix[(i-5):i, (i-5):i])
-	score.append(upscore/2 + downscore/2)
+	score.append(up/2 + down/2)
 	postion.append(i+start_bin)
     
 #print(score)
@@ -159,10 +160,10 @@ fig, ax = plt.subplots(2, 1, gridspec_kw={'height_ratios': [3, 1]}, figsize=(5,6
 pl = ax[0].imshow(-matrix, cmap = "magma")
 ax[0].set_xticks([])
 ax[0].set_yticks([])
-ax[0].set_title("score of 40kb resolution")
+ax[0].set_title("score for 40kb resolution")
 ax[0].axis('off')
 ax[1].set_xlim(54878,54951)
 ax[1].set_xticks([54878,54951])
 ax[1].set_xticklabels([10400000,13400000])
-ax[1].scatter(pos,ins_score)
+ax[1].scatter(postion,score)
 plt.show()
