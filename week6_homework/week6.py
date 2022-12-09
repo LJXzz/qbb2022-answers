@@ -109,3 +109,60 @@ cb1.locaor = tick_locator
 cb1.set_ticks([-1.5, -1, -0.5, 0, 0.5, 1,1.5])
 cb1.update_ticks()
 plt.show()
+
+
+
+#part3
+
+import sys
+import math
+import numpy
+import numpy.matlib
+import matplotlib.pyplot as plt
+import matplotlib.colors as colors
+
+matrix40000 = sys.argv[1]
+data = numpy.loadtxt(matrix40000, dtype=numpy.dtype([('F1', int), ('F2', int), ('score', float)]))
+#print(data)
+start_bin = 54878
+end_bin = 54951
+matrix =  numpy.matlib.zeros(shape = (74,74))
+miniscore = 0
+for i in range(len(data)):
+	if data[i][0] < 54952:
+		if data[i][0] > 54877:
+			if data[i][1] < 54952:
+				if data[i][1]> 54877:
+					F1 = data[i][0] - start_bin
+					F2 = data[i][1] - start_bin
+					matrix[F1,F2] = math.log(data[k][2],2)
+					matrix[F2,F1] = math.log(data[k][2],2)
+					if matrix[F2,F1] < miniscore:
+						miniscore = matrix[F2,F1]
+					else: 
+						miniscore = miniscore
+matrix = matrix - miniscore
+
+#print(matrix)
+score = []
+postion = []
+for i in range(5, 70):
+	up = numpy.mean(matrix[(i - 5):i, i:(i + 5)])
+	down = numpy.mean(matrix[(i-5):i, (i-5):i])
+	score.append(upscore/2 + downscore/2)
+	postion.append(i+start_bin)
+    
+#print(score)
+#print(position)
+
+fig, ax = plt.subplots(2, 1, gridspec_kw={'height_ratios': [3, 1]}, figsize=(5,6.25))
+pl = ax[0].imshow(-matrix, cmap = "magma")
+ax[0].set_xticks([])
+ax[0].set_yticks([])
+ax[0].set_title("score of 40kb resolution")
+ax[0].axis('off')
+ax[1].set_xlim(54878,54951)
+ax[1].set_xticks([54878,54951])
+ax[1].set_xticklabels([10400000,13400000])
+ax[1].scatter(pos,ins_score)
+plt.show()
