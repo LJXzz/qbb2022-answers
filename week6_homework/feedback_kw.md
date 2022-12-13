@@ -1,6 +1,6 @@
 ## Week 6 -- 10 points possible
 
-0 + 0 + _ + _ + _ + _ + _ + 0 + 0 + 0 = _ of 10 points possible
+0 + 0 + 1 + 1 + 1 + 1 + 1 + 0 + 0 + 0 + 1 + 1 + 0 = 7 of 10 points possible
 
 1. Given data question: What percentage of reads are valid interactions?
 
@@ -60,6 +60,8 @@ Possible Bonus points:
 2. Insulation script set up to (0.5 pts each)
 
   * convert sparse data into square matrix
-  * find the insulation score by taking mean of 5x5 squares of interactions around target; --> your `up` variable looks up and down, and so you don't need your `down` variable and the average you take of `up` and `down`. 
+  * find the insulation score by taking mean of 5x5 squares of interactions around target; --> your `up` variable looks up and down, and so you don't need your `down` variable and the average you take of `up` and `down`.
 
 3. Turned in the plot of the heatmap + insulation scores below (0.5 pts each panel)
+
+**great work overall; please upload plots and answers to questions for full credit**
