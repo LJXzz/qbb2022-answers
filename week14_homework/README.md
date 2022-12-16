@@ -1,4 +1,4 @@
-#Step1
+# Step1
 ## 1A
 git clone https://github.com/marbl/Krona.git
 cd Krona/KronaTools/
