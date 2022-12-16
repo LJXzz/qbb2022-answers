@@ -77,6 +77,8 @@ We can assess the quality of genome bins by identifing and counting universal si
 
 # Step 3
 
+I used my own python script to do this steps 
+
 ## Question 4(A)
 
 Bin 1: root;cellular organisms;Bacteria;Terrabacteria group;Firmicutes;Bacilli;Bacillales;Staphylococcaceae;Staphylococcus;Staphylococcus aureus;Staphylococcus aureus subsp. aureus;Staphylococcus aureus subsp. aureus ST72;Staphylococcus aureus subsp. aureus CN1
@@ -93,7 +95,7 @@ Bin 6: root;cellular organisms;Bacteria;Terrabacteria group;Firmicutes;Bacilli;L
 
 ## Question 4(B)
 
-
+I read some paper about binning methods. To improve the accurracy and the robusty, some paper suggest to do a fast approximation of evolutionary neighborhoods. 
 
 
 
